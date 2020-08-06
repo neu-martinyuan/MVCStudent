@@ -1,0 +1,268 @@
+﻿@model MvcStudent.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4 class="mt-5">Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Classroom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classroom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassroomId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClassroomId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DadName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DadName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MomName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MomName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vaccine1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vaccine1)
+            &nbsp;
+            @if (int.Parse(Model.Age) >= 6)
+            {
+                @if (
+                   ((DateTime.Now - Model.Vaccine1).TotalDays) > ((int.Parse(Model.Age) - 5) * 30)
+                   )
+                {
+                    <span  class="text-warning">Ready for the 3rd dose in this month!</span>
+                }
+            }
+
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vaccine2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vaccine2)
+            &nbsp;
+            @if (int.Parse(Model.Age) >= 3 && int.Parse(Model.Age) < 6)
+            {
+                @if (
+                 ((DateTime.Now - Model.Vaccine2).TotalDays) > ((int.Parse(Model.Age) - 2) * 30)
+                 )
+                {
+                    <span  class="text-warning">Ready for the 2nd dose in this month!</span>
+                }
+            }
+
+            @if (int.Parse(Model.Age) == 6)
+            {
+                @if (
+                 ((DateTime.Now - Model.Vaccine2).TotalDays) > 30
+                 )
+                {
+                    <span  class="text-warning">Ready for the 3rd dose in this month!</span>
+                }
+            }
+
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vaccine3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vaccine3)
+            &nbsp;
+            @if (int.Parse(Model.Age) >= 3 && int.Parse(Model.Age) < 6)
+            {
+                @if (
+               ((DateTime.Now - Model.Vaccine3).TotalDays) > ((int.Parse(Model.Age) - 2) * 30)
+               )
+                {
+                    <span  class="text-warning">Ready for the 2nd dose in this month!</span>
+                }
+            }
+
+            @if (int.Parse(Model.Age) == 6)
+            {
+                @if (
+               ((DateTime.Now - Model.Vaccine3).TotalDays) > 30
+               )
+                {
+                    <span  class="text-warning">Ready for the 3rd dose in this month!</span>
+                }
+            }
+
+            @if (int.Parse(Model.Age) == 15)
+            {
+                @if (
+               ((DateTime.Now - Model.Vaccine3).TotalDays) > 30
+               )
+                {
+                    <span  class="text-warning">Ready for the 4th dose in this month!</span>
+                }
+            }
+
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vaccine4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vaccine4)
+            &nbsp;
+            @if (int.Parse(Model.Age) >= 3 && int.Parse(Model.Age) < 6)
+            {
+                @if (
+              ((DateTime.Now - Model.Vaccine4).TotalDays) > ((int.Parse(Model.Age) - 2) * 30)
+              )
+                {
+                    <span  class="text-warning">Ready for the 2nd dose in this month!</span>
+                }
+            }
+
+            @if (int.Parse(Model.Age) == 6)
+            {
+                @if (
+              ((DateTime.Now - Model.Vaccine4).TotalDays) > 30
+              )
+                {
+                    <span  class="text-warning">Ready for the 3rd dose in this month!</span>
+                }
+            }
+
+            @if (int.Parse(Model.Age) >= 12 && int.Parse(Model.Age) < 16)
+            {
+                @if (
+              ((DateTime.Now - Model.Vaccine4).TotalDays) > ((int.Parse(Model.Age) - 11) * 30)
+              )
+                {
+                    <span  class="text-warning">Ready for the 4th dose in this month!</span>
+                }
+            }
+
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vaccine5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vaccine5)
+            &nbsp;
+            @if (int.Parse(Model.Age) >= 3 && int.Parse(Model.Age) < 6)
+            {
+                @if (
+          ((DateTime.Now - Model.Vaccine5).TotalDays) > ((int.Parse(Model.Age) - 2) * 30)
+          )
+                {
+                    <span class="text-warning">Ready for the 2nd dose in this month!</span>
+                }
+            }
+
+            @if (int.Parse(Model.Age) == 6)
+            {
+                @if (
+           ((DateTime.Now - Model.Vaccine5).TotalDays) > 30
+           )
+                {
+                    <span class="text-warning">Ready for the 3rd dose in this month!</span>
+                }
+            }
+
+            @if (int.Parse(Model.Age) >= 12 && int.Parse(Model.Age) < 16)
+            {
+                @if (
+           ((DateTime.Now - Model.Vaccine5).TotalDays) > ((int.Parse(Model.Age) - 11) * 30)
+           )
+                {
+                    <span class="text-warning">Ready for the 4th dose in this month!</span>
+                }
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vaccine6)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vaccine6)
+            &nbsp;
+            @if (int.Parse(Model.Age) >= 3 && int.Parse(Model.Age) < 6)
+            {
+                @if (
+             ((DateTime.Now - Model.Vaccine6).TotalDays) > ((int.Parse(Model.Age) - 2) * 30)
+             )
+                {
+                    <span class="text-warning">Ready for the 2nd dose in this month!</span>
+                }
+            }
+
+            @if (int.Parse(Model.Age) >= 6 && int.Parse(Model.Age) < 16)
+            {
+                @if (
+              ((DateTime.Now - Model.Vaccine6).TotalDays) > ((int.Parse(Model.Age) - 5) * 30)
+              )
+                {
+                    <span class="text-warning">Ready for the 3rd dose in this month!</span>
+                }
+            }
+
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vaccine7)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vaccine7)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Renewal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Renewal)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>

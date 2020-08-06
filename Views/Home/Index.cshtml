@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4 mt-5">Daycare and Immunization</h1>
+        <p></p>
+        <img src="https://uscensusbureau.github.io/census-small-business/img/stock/daycare.jpg" />
+        <div class="container" style="max-width: 40rem">
+            <p class="lead text-muted">
+                Immunization is a key component of primary health care and an indisputable human right. It’s also one of the best health investments money can buy. Vaccines are also critical to the prevention and control of infectious-disease outbreaks. They underpin global health security and will be a vital tool in the battle against antimicrobial resistance.
+            </p>
+            <p>
+                <a class="btn btn-primary my-2" asp-area="" asp-controller="Students" asp-action="Index">Go to student list</a>
+                @*<a class="btn btn-primary my-2" asp-area="" asp-controller="Students" asp-action="Index">Go to teacher list</a>*@
+                <a class="btn btn-primary my-2" asp-area="" asp-controller="Students" asp-action="Create">Create new student</a>
+            </p>
+        </div>
+    </div>

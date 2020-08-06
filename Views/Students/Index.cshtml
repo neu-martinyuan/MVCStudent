@@ -1,0 +1,371 @@
+﻿@model MvcStudent.Models.StudentClassroomViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form asp-controller="Students" asp-action="Index" class="form-inline ml-1 mt-5" method="get">
+        <label class="mb-2 mr-sm-2" for="studentClassroom">Classroom</label>
+        <select asp-for="StudentClassroom" asp-items="Model.Classrooms" class="custom-select mb-2 mr-sm-2" id="studentClassroom">
+            <option value="">Choose...</option>
+        </select>
+
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Student Name</div>
+            </div>
+            <input type="text" class="form-control" id="studentName" name="SearchString" placeholder="Jone">
+        </div>
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Annual Renewal</div>
+            </div>
+            <input type="text" class="form-control" id="studentRenewal" name="StudentRenewal">
+        </div>
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Teacher Name</div>
+            </div>
+            <input type="text" class="form-control" id="studentTeacher" name="StudentTeacher">
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-2">Filter</button>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Classroom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].ClassroomId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].DadName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].MomName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Vaccine1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Vaccine2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Vaccine3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Vaccine4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Vaccine5)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Vaccine6)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Vaccine7)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Students[0].Renewal)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int countClass1 = 0; }
+            @{int countClass2 = 0; }
+            @{int countClass3 = 0; }
+            @{int countClass4 = 0; }
+            @{int countClass5 = 0; }
+            @{int countClass6 = 0; }
+
+            @{HashSet<string> setA = new HashSet<string>();}
+            @{HashSet<string> setB = new HashSet<string>();}
+            @{HashSet<string> setC = new HashSet<string>();}
+
+            @foreach (var item in Model.Students)
+            {
+                @if (item.ClassroomId == "1")
+                {
+                    countClass1++;
+                    if (item.Classroom == "Class A")
+                    {
+                        setA.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class B")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class C")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                }
+                @if (item.ClassroomId == "2")
+                {
+                    countClass2++;
+                    if (item.Classroom == "Class A")
+                    {
+                        setA.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class B")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class C")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                }
+                @if (item.ClassroomId == "3")
+                {
+                    countClass3++;
+                    if (item.Classroom == "Class A")
+                    {
+                        setA.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class B")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class C")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                }
+                @if (item.ClassroomId == "4")
+                {
+                    countClass4++;
+                    if (item.Classroom == "Class A")
+                    {
+                        setA.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class B")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class C")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                }
+                @if (item.ClassroomId == "5")
+                {
+                    countClass5++;
+                    if (item.Classroom == "Class A")
+                    {
+                        setA.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class B")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class C")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                }
+                @if (item.ClassroomId == "6")
+                {
+                    countClass6++;
+                    if (item.Classroom == "Class A")
+                    {
+                        setA.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class B")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                    if (item.Classroom == "Class C")
+                    {
+                        setB.Add(item.ClassroomId);
+                    }
+                }
+                <tr class="@(item.Renewal == "No" ? "table-warning" : "")">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Classroom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClassroomId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DadName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MomName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vaccine1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vaccine2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vaccine3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vaccine4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vaccine5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vaccine6)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vaccine7)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Renewal)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="ml-2">
+        <form>
+            <button class="btn btn-primary mb-2" asp-action="Create">Create new student</button>
+        </form>
+        
+        @if (countClass1 == 4)
+        {
+            <div class="row ml-0">
+                <div class="alert alert-danger" role="alert">
+                    <span style="color: red;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    &nbsp;Group 1 is full!
+                </div>
+            </div>
+        }
+        @if (countClass2 == 4)
+        {
+            <div class="row ml-0">
+                <div class="alert alert-danger" role="alert">
+                    <span style="color: red;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    &nbsp;Group 2 is full!
+                </div>
+            </div>
+        }
+        @if (countClass3 == 4)
+        {
+            <div class="row ml-0">
+                <div class="alert alert-danger" role="alert">
+                    <span style="color: red;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    &nbsp;Group 3 is full!
+                </div>
+            </div>
+        }
+        @if (countClass4 == 4)
+        {
+            <div class="row ml-0">
+                <div class="alert alert-danger" role="alert">
+                <span style="color: red;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </span>
+                &nbsp;Group 4 is full!
+                </div>
+            </div>
+        }
+        @if (countClass5 == 4)
+        {
+            <div class="row ml-0">
+                <div class="alert alert-danger" role="alert">
+                    <span style="color: red;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    &nbsp;Group 5 is full!
+                </div>
+            </div>
+        }
+        @if (countClass6 == 4)
+        {
+            <div class="row ml-0">
+                <div class="alert alert-danger" role="alert">
+                    <span style="color: red;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    &nbsp;Group 6 is full!
+                </div>
+            </div>
+        }
+        @if (setA.Count == 3)
+        {
+            <div class="row ml-0">
+                <div class="alert alert-danger" role="alert">
+                    <span style="color: red;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    &nbsp;Class A is full!
+                </div>
+            </div>
+        }
+        @if (setB.Count == 3)
+        {
+            <div class="row ml-0">
+                <div class="alert alert-danger" role="alert">
+                    <span style="color: red;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    &nbsp;Class B is full!
+                </div>
+            </div>
+        }
+        @if (setC.Count == 3)
+        {
+            <div class="row ml-0">
+                <div class="alert alert-danger" role="alert">
+                    <span style="color: red;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    &nbsp;Class C is full!
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>
